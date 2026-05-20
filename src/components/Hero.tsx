@@ -156,7 +156,7 @@ export const Hero: React.FC = () => {
           <motion.a 
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            href="https://drive.google.com/file/d/1xc5Ly3eSlJGzK1UuC_tLdMR6vFWAFBs2/view" 
+            href="https://drive.google.com/file/d/1i5X3_yTaX372bgPRQ1Q-1fK-QDXz767n/view" 
             target="_blank" 
             rel="noreferrer"
             className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl border border-slate-200/80 bg-white dark:border-zinc-750 dark:bg-zinc-900/30 text-slate-700 dark:text-zinc-200 px-3 sm:px-5.5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium tracking-wide hover:bg-slate-50 hover:border-indigo-600 hover:text-indigo-600 dark:hover:bg-zinc-900/60 dark:hover:border-violet-400 dark:hover:text-violet-400 transition-all cursor-pointer shadow-sm"
