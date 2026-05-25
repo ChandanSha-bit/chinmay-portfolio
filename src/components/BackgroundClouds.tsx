@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const BackgroundClouds: React.FC = () => {
-  return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none w-full h-full select-none">
-      
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      className="fixed inset-0 z-0 overflow-hidden pointer-events-none w-full h-full select-none"
+    >
 
       {/* Wave Line 1: Elegant flowing blue line */}
       <svg className="absolute inset-0 w-full h-full opacity-30 dark:opacity-30 transition-opacity duration-500" viewBox="0 0 1440 1080" preserveAspectRatio="none">
@@ -30,7 +46,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 14,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.2
           }}
         />
       </svg>
@@ -58,7 +75,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 18,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.3
           }}
         />
       </svg>
@@ -85,7 +103,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.4
           }}
         />
       </svg>
@@ -113,7 +132,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.5
           }}
         />
       </svg>
@@ -141,7 +161,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 16,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.3
           }}
         />
       </svg>
@@ -168,7 +189,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 22,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.5
           }}
         />
       </svg>
@@ -196,7 +218,8 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 19,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.4
           }}
         />
       </svg>
@@ -224,11 +247,12 @@ export const BackgroundClouds: React.FC = () => {
           transition={{
             duration: 28,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 0.6
           }}
         />
       </svg>
 
-    </div>
+    </motion.div>
   );
 };

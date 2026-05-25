@@ -101,6 +101,7 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
           <img 
             src={project.image} 
             alt={project.title} 
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
           />
         </div>

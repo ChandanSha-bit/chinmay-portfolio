@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export const Hero: React.FC = () => {
+const TypewriterText: React.FC = () => {
   const words = ["Full Stack Developer.", "Full Stack Problem Solver.", "Full Stack Gen AI Developer."];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -33,6 +33,18 @@ export const Hero: React.FC = () => {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentWordIndex]);
 
+  return (
+    <>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-violet-400 dark:via-purple-400 dark:to-pink-300">
+        {currentText}
+      </span>
+      <span className="text-indigo-650 dark:text-violet-400 animate-pulse font-light ml-1">|</span>
+    </>
+  );
+};
+
+export const Hero: React.FC = () => {
+
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -50,9 +62,8 @@ export const Hero: React.FC = () => {
       y: 0,
       scale: 1,
       transition: {
-        type: 'spring' as const,
-        damping: 15,
-        stiffness: 200,
+        duration: 0.4,
+        ease: 'easeOut' as const,
       },
     },
   };
@@ -113,10 +124,7 @@ export const Hero: React.FC = () => {
                   {char === " " ? "\u00A0" : char}
                 </motion.span>
               ))}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-violet-400 dark:via-purple-400 dark:to-pink-300">
-                {currentText}
-              </span>
-              <span className="text-indigo-650 dark:text-violet-400 animate-pulse font-light ml-1">|</span>
+              <TypewriterText />
             </span>
           </motion.h1>
         </div>
