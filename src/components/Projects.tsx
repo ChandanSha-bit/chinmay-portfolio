@@ -21,7 +21,7 @@ const projects: Project[] = [
     desc: 'A modular full-stack app featuring an AI chat interface using Groq SDK (Llama 3) and OpenAI DALL-E 3 image generation, with optimized API costs and latency.',
     tech: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Zustand', 'TypeScript'],
     github: 'https://github.com/ChandanSha-bit/Atlas',
-    demo: 'https://github.com/ChandanSha-bit/Atlas',
+    demo: 'https://atlas-swart-eight.vercel.app/',
     demoDisplay: 'github.com/Atlas',
     image: '/Atlas.png'
   },
@@ -81,13 +81,13 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
       className={`relative overflow-hidden flex flex-col rounded-[1.5rem] border border-slate-200/60 bg-[#fafafa]/80 backdrop-blur-sm dark:border-zinc-800/60 dark:bg-[#0a0a0a]/80 shadow-lg hover:shadow-xl dark:shadow-none transition-all duration-500 group`}
     >
       {/* Interactive Mouse Glow Background */}
-      <div 
+      <div
         className="pointer-events-none absolute -inset-px rounded-[1.5rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-0"
         style={{
           background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(139,92,246,0.12), transparent 40%)`,
         }}
       />
-      <div 
+      <div
         className="pointer-events-none absolute inset-0 rounded-[1.5rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-0"
         style={{
           background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(99,102,241,0.08), transparent 40%)`,
@@ -95,12 +95,12 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
       />
 
       <div className="relative z-10 flex h-full flex-col">
-        
+
         {/* Image Container */}
         <div className="relative overflow-hidden bg-slate-200 dark:bg-zinc-900 flex-shrink-0 w-full h-36 sm:h-44">
-          <img 
-            src={project.image} 
-            alt={project.title} 
+          <img
+            src={project.image}
+            alt={project.title}
             loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
           />
@@ -112,9 +112,9 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
             <h3 className="font-sans text-base md:text-xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
               {project.title}
             </h3>
-            <a 
-              href={project.github} 
-              target="_blank" 
+            <a
+              href={project.github}
+              target="_blank"
               rel="noreferrer"
               className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-666 dark:text-zinc-300 transition-colors shrink-0"
             >
@@ -126,9 +126,9 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
             {project.desc}
           </p>
 
-          <a 
-            href={project.demo} 
-            target="_blank" 
+          <a
+            href={project.demo}
+            target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 font-mono text-[11px] sm:text-sm text-indigo-600 hover:text-indigo-777 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors mb-4 group/link w-max"
           >
@@ -141,7 +141,7 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
           {/* Tech Pills */}
           <div className="flex flex-wrap gap-1.5">
             {project.tech.map((t) => (
-              <span 
+              <span
                 key={t}
                 className="font-sans text-[11px] font-semibold px-2.5 py-1 rounded-full border border-slate-300/80 bg-white/50 text-slate-700 dark:border-zinc-700/80 dark:bg-zinc-900/50 dark:text-zinc-300 backdrop-blur-md"
               >
@@ -157,12 +157,12 @@ const BentoCard = ({ project, index }: { project: Project; index: number }) => {
 
 export const Projects: React.FC = () => {
   return (
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       className="py-16 bg-transparent transition-colors duration-300 relative z-10"
     >
       <div className="mx-auto max-w-5xl px-6 md:px-8">
-        
+
         {/* Section Header */}
         <div className="text-left mb-10">
           <h2 className="font-sans text-xs font-semibold tracking-wider uppercase text-indigo-650 dark:text-violet-400">
