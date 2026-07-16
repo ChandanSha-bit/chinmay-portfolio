@@ -22,7 +22,7 @@ const projects: Project[] = [
     tech: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Zustand', 'TypeScript'],
     github: 'https://github.com/ChandanSha-bit/Atlas',
     demo: 'https://atlas-swart-eight.vercel.app/',
-    demoDisplay: 'github.com/Atlas',
+    demoDisplay: 'atlas-swart-eight.vercel.app',
     image: '/Atlas.png'
   },
   {
